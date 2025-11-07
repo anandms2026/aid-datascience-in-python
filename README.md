@@ -1,16 +1,50 @@
-Introduction to Data Science in Python
+Correct ones: 
+obj2['California'] == None
+S.iloc[0:3]
+all of these work
+df.drop('two')
+s2.loc[1]
+loc and iloc are methods
+df.T
 
-How to Run Jupitor Notebook on local mac
-------------------------------------------
-pip3 install jupyterlab
------------------------------------JupyterLab-----------------------------------------------------
-Install JupyterLab with pip:
+failed onces
 
-pip install jupyterlab
-Note: If you install JupyterLab with conda or mamba, we recommend using the conda-forge channel.
+df = df.rename(mapper = lambda x: x.upper(), axis = 'columns') --fail
+df.rename(mapper = lambda x: x.upper(), axis = 1)
+df = df.rename(mapper = lambda x: x.upper(), axis = 1) Fail-- 
+df.rename(mapper = lambda x: x.upper(), axis = 1, inplace = True)
 
-Once installed, launch JupyterLab with:
 
-jupyter lab
-after this open browser with
-http://localhost:8888/ this loads the Jupytor lab
+
+df.where(df['toefl score'] > 105)
+df[df['toefl score'] > 105]
+All of these will work
+df.where(df['toefl score'] > 105).dropna() Fail
+
+
+(df['toefl score'] > 105) & (df['toefl score'] < 115)
+df[df['toefl score'].gt(105) & df['toefl score'].lt(115)]--fail
+df[(df['toefl score'].isin(range(106, 115)))] --fail
+df[(df['toefl score'] > 105) & (df['toefl score'] < 115)]
+
+
+my_categories = pd.CategoricalDtype(categories=['D', 'D+', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+'])
+
+
+
+my_categories = pd.CategoricalDtype(categories=['D', 'D+', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+'], ordered=True)
+
+
+
+my_categories = pd.CategoricalDtype(categories=['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D'])
+
+
+
+(my_categories=['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D'], ordered=True)
+
+
+1 point
+4.
+Question 4
+
+
